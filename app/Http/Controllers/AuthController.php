@@ -9,7 +9,7 @@ use App\Models\User;
 
 class AuthController extends Controller
 {
-    public function loginForm()
+    public function login_form()
     {
         return view('galery.login');
     }

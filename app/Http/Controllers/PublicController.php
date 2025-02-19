@@ -28,12 +28,6 @@ class PublicController extends Controller
         }
         return view('galery.home', compact('fotos'));
     }
-
-    public function profile()
-    {
-        $user = auth()->user();
-        return view('galery.profile',compact('user'));
-    }
     public function notif()
     {
 

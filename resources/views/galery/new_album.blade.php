@@ -10,7 +10,7 @@
         </div>
         <div>
             <label for="deskripsi">Deskripsi</label>
-            <textarea name="deskripsi" id="deskripsi" cols="30" rows="10"></textarea>
+            <input type="text" name="deskripsi" id="deskripsi">
         </div>
         <div>
             <button type="submit">Tambah</button>

@@ -4,7 +4,7 @@
     <div class="galery-container">
         @foreach ($fotos as $foto)
             <div class="gambar-container">
-                <a href="{{ route('detail-foto', $foto->id) }}">
+                <a href="{{ route('DetailFoto', $foto->id) }}">
                     <img class="gambar" src="{{ asset('storage/' . $foto->lokasifile) }}">
                 </a>
                 <div class="gambar-button-container">

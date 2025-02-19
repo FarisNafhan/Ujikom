@@ -11,10 +11,10 @@ use Illuminate\Support\Facades\Auth;
 
 class GaleryController extends Controller
 {
-    public function Galery()
+    public function galery()
     {
         $user_id = auth()->id();
-        $fotos = foto::inRandomOrder()->where('user_id', $user_id)->with('likes', 'komentar')->get();
+        $fotos = foto::where('user_id', $user_id)->with('likes', 'komentar')->get();
 
         foreach ($fotos as $foto) {
             $foto->is_liked = $foto->likes->where('user_id', $user_id)->count() > 0;
@@ -24,14 +24,14 @@ class GaleryController extends Controller
         return view('galery.galery', compact('fotos'));
     }
 
-    public function NewGalery()
+    public function new_galery()
     {
         $user_id = auth()->id();
         $albums = Album::where('user_id', $user_id)->get();
         return view('galery.new_galery', compact('albums'));
     }
 
-    public function downloadFoto($id)
+    public function download_foto($id)
     {
         $foto = Foto::findOrFail($id);
 
@@ -44,24 +44,25 @@ class GaleryController extends Controller
         }
     }
 
-    public function AddGalery(Request $request)
+    public function add_galery(Request $request)
     {
         Log::info('Data dari form yang dikirim:', $request->all());
 
         $request->validate([
             'judul' => 'required|string|max:255',
             'deskripsi' => 'required|string|max:255',
-            'lokasifile' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
+            'lokasifile' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:5048',
             'album_id' => 'required|exists:albums,id',
         ]);
 
         if ($request->hasFile('lokasifile')) {
-            $filePath = $request->file('lokasifile')->store('galery', 'public');
+            $file = $request->file('lokasifile');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $filePath = $request->file('lokasifile')->storeAs('galery', $filename, 'public');
             Log::info('File uploaded successfully: ' . $filePath);
         } else {
             Log::warning('No file uploaded.');
         }
-
 
         Foto::create([
             'judul' => $request->input('judul'),
@@ -73,9 +74,9 @@ class GaleryController extends Controller
         return redirect()->route('galery')->with('success', 'Gacor Kang 🔥🔥🔥');
     }
 
-    public function detailFoto($id)
+    public function detail_foto($id)
     {
         $foto = foto::with('komentar')->findOrFail($id);
-        return view('galery.detailFoto' ,compact('foto'));
+        return view('galery.detail_foto' ,compact('foto'));
     }
 }

@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Log; // Import Log Facade
 
 class RegisterController extends Controller
 {
-    public function registerForm()
+    public function register_form()
     {
         return view('galery.register');
     }

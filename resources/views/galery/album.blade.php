@@ -2,12 +2,21 @@
 
 @section('content')
 <div>
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
     <div>
-        <a href="{{ route('NewAlbum') }}"><button>buat album</button></a>
+        <a href="{{ route('NewAlbum') }}">
+            <button class="add-gambar">buat album</button>
+        </a>
     </div>
     <div>
         @foreach ($albums as $album)
-            <a href=""><button>{{ $album->nama }}</button></a>
+            <a href="{{ route('DetailAlbum', $album->id) }}">
+                <button class="album-button">{{ $album->nama }}</button>
+            </a>
         @endforeach
     </div>
 </div>

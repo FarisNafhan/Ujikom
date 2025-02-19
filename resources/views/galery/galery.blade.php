@@ -10,26 +10,24 @@
         {{-- <div>
             Galery
         </div> --}}
-        <div class="add-gambar">
-            <button>
-                <a href="{{ route('NewGalery') }}">
-                    Buat Galery<i class="fa-solid fa-plus"></i>
-                </a>
-            </button>
+        <div>
+            <a href="{{ route('NewGalery') }}">
+                <button class="add-gambar">Buat Galery+</button>
+            </a>
         </div>
 
         <div class="galery-container">
 
             @foreach ($fotos as $foto)
                 <div class="gambar-container">
-                    <a href="{{ route('detail-foto', $foto->id) }}">
+                    <a href="{{ route('DetailFoto', $foto->id) }}">
                         <img class="gambar" src="{{ asset('storage/' . $foto->lokasifile) }}">
                     </a>
                     <div class="gambar-button">
                         @auth
                             <button>
                                 <p id="komen-count-{{ $foto->id }}">{{ $foto->komen_count }}
-                                    <a href="{{ route('detail-foto', $foto->id) }}">
+                                    <a href="{{ route('DetailFoto', $foto->id) }}">
                                         <i class="fa-regular fa-comment" style="color: black"></i>
                                     </a>
                                 </p>

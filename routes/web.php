@@ -7,31 +7,39 @@ use App\Http\Controllers\AlbumController;
 use App\Http\Controllers\KomenController;
 use App\Http\Controllers\GaleryController;
 use App\Http\Controllers\PublicController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
 
 Route::get('/', [PublicController::class, 'landing'])->name('landing');
 
-Route::get('/login', [AuthController::class, 'loginForm'])->name('loginForm');
+Route::get('/login', [AuthController::class, 'login_form'])->name('loginForm');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::get('/register', [RegisterController::class, 'registerForm'])->name('registerForm');
+Route::get('/register', [RegisterController::class, 'register_form'])->name('registerForm');
 Route::post('/register', [RegisterController::class, 'register'])->name('register');
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/home', [PublicController::class, 'home'])->name('home');
-    Route::get('/profile', [PublicController::class, 'profile'])->name('profile');
+
+    Route::get('/profile', [ProfileController::class, 'profile'])->name('profile');
+    Route::get('/edit-profile', [ProfileController::class, 'edit_profile'])->name('editprofile');
+    Route::put('/save-profile', [ProfileController::class, 'save_profile'])->name('saveprofile');
+
     Route::get('/notifikasi', [PublicController::class, 'notif'])->name('notif');
 
     Route::get('/album', [AlbumController::class, 'album'])->name('album');
-    Route::get('/new-album', [AlbumController::class, 'NewAlbum'])->name('NewAlbum');
-    Route::post('/add-album', [AlbumController::class, 'AddAlbum'])->name('AddAlbum');
+    Route::get('/new-album', [AlbumController::class, 'new_album'])->name('NewAlbum');
+    Route::get('/detail-album/{id}', [AlbumController::class, 'detail_album'])->name('DetailAlbum');
 
-    Route::get('/my-galery', [GaleryController::class, 'Galery'])->name('galery');
-    Route::get('/my-galery-new', [GaleryController::class, 'NewGalery'])->name('NewGalery');
-    Route::post('/my-galery-new-add', [GaleryController::class, 'AddGalery'])->name('AddGalery');
-    Route::get('/download/{id}', [GaleryController::class, 'downloadFoto'])->name('downloadFoto');
-    Route::get('/foto/{id}', [GaleryController::class, 'detailFoto'])->name('detail-foto');
+    Route::post('/add-album', [AlbumController::class, 'add_album'])->name('AddAlbum');
+    Route::put('/save-album/{id}', [AlbumController::class, 'save_album'])->name('SaveAlbum');
+
+    Route::get('/my-galery', [GaleryController::class, 'galery'])->name('Galery');
+    Route::get('/my-galery-new', [GaleryController::class, 'new_galery'])->name('NewGalery');
+    Route::post('/my-galery-new-add', [GaleryController::class, 'add_galery'])->name('AddGalery');
+    Route::get('/download/{id}', [GaleryController::class, 'download_foto'])->name('DownloadFoto');
+    Route::get('/foto/{id}', [GaleryController::class, 'detail_foto'])->name('DetailFoto');
 
     Route::post('/komentar-add/{foto_id}', [KomenController::class, 'komentar'])->name('komentar');
     Route::post('/foto/komentar', [KomenController::class, 'komentar'])->name('komentar.store');

@@ -17,13 +17,13 @@ class AlbumController extends Controller
         return view('galery.album', compact('albums'));
     }
 
-    public function NewAlbum()
+    public function new_album()
     {
         $user = Auth::user();
         return view('galery.new_album', compact('user'));
     }
 
-    public function AddAlbum(Request $request)
+    public function add_album(Request $request)
     {
 
         Log::info('Request data received for AddAlbum:', $request->all());
@@ -43,5 +43,31 @@ class AlbumController extends Controller
         ]);
 
         return redirect()->route('album');
+    }
+
+    public function detail_album($id)
+    {
+        $album = album::findOrFail($id);
+        return view('galery.detail_album', compact('album'));
+    }
+
+    public function save_album(Request $request, $id)
+    {
+        $request->validate([
+            'nama' => 'required|string|max:255',
+            'deskripsi' => 'required|string|max:255',
+        ]);
+
+        $album = album::find($id);
+        if (!$album) {
+            return redirect()->route('album')->with('error', 'Album tidak ditemukan!');
+        }
+
+        $album -> update([
+            'nama' => $request->nama,
+            'deskripsi' => $request->deskripsi,
+        ]);
+
+        return redirect()->route('album')->with('success', 'album berhasil diperbarui!!!');
     }
 }
