@@ -1,0 +1,71 @@
+.galery-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Jarak antar gambar */
+    padding: 20px 20px;
+    justify-content: start;
+    align-items: center;
+}
+
+.gambar-container {
+    width: 320px;
+    height: 240px;
+    background-color: #ececec;
+    /* margin-left: 1.5rem; */
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.5s ease-in-out;
+}
+
+.gambar:hover {
+    transform: scale(1.05); /* Efek zoom saat hover */
+}
+
+.gambar {
+    width: 100%; /* Supaya gambar selalu pas */
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    background-color: gray;
+}
+
+.gambar-button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.gambar-button button {
+    margin-left: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.gambar-button p {
+    font-size: 15px;
+}
+
+.add-gambar-container {
+    width: 200px;
+    height: 200px;
+    font-size: 100px;
+    border-radius: 10px;
+}
+
+.add-gambar {
+    text-align: center;
+    background-color: #ececec;
+    cursor: pointer;
+}
+
+.add-gambar button {
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    font-size: 25px;
+    background: none;
+    border: none;
+}

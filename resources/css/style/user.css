@@ -1,0 +1,55 @@
+.user-container {
+    text-align: center;
+    width: 100%;
+    height: max-content;
+    background-color: aliceblue;
+    padding: 0;
+
+}
+.user-nav {
+    display: flex;
+    justify-content: center;
+    background-color: #eeeeee;
+    align-items: center;
+    padding: 1.20rem 4rem;
+}
+
+.user-nav .logo a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.user-nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.user-nav-links li {
+    margin: 0 15px;
+}
+
+.user-nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.user-nav-links button {
+    background: none;
+    display: block;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.user-nav-links button:hover {
+    color: #eeac1e;
+}
+
+.user-nav-links a:hover {
+    color: #eeac1e;
+}

@@ -1,0 +1,79 @@
+.foto-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.foto {
+    flex: 1;
+    max-width: 100%;
+}
+
+.foto img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.deskripsi-container {
+    text-align: left;
+    flex: 1;
+    margin-right: 20px;
+}
+
+.komentar {
+    width: 40%;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 10px;
+}
+
+.komentar form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.komentar textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.komentar button {
+    padding: 10px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.komentar button:hover {
+    background: #0056b3;
+}
+
+.komentar-list {
+    margin-top: 20px;
+}
+
+.komentar-item {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.komentar-item:last-child {
+    border-bottom: none;
+}
+.tanggal {
+    font-size: 10px;
+}

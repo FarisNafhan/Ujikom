@@ -1,0 +1,154 @@
+.container{
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding: 25px 20px;
+    /* background-color: aqua; */
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #71a76a;
+    padding: 1rem 2rem;
+}
+
+.navbar .logo a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.nav-links button {
+    background: none;
+    display: block;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.nav-links button:hover {
+    color: #eeac1e;
+}
+
+.nav-links a:hover {
+    color: #eeac1e;
+}
+
+/* Burger Menu */
+.burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.burger .line {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+}
+
+/* Responsif untuk mobile */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #333;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    .nav-links li {
+        margin: 20px 0;
+    }
+
+    .navbar.active .nav-links {
+        transform: translateX(0);
+    }
+
+    .burger {
+        display: flex;
+    }
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropbtn {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Dropdown Content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    z-index: 1;
+    border-radius: 5px;
+}
+
+/* Show the dropdown when hovering over the button */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Style for dropdown links */
+.dropdown-content a, .dropdown-content button {
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+    border: none;
+    background: none;
+}
+
+.dropdown-content a:hover, .dropdown-content button:hover {
+    background-color: #555;
+}
+
+/* Logout button */
+.dropdown-content form {
+    margin: 0;
+}
