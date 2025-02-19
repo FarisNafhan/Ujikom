@@ -1,7 +1,7 @@
 .foto-container {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: flex-start;
     max-width: 1000px;
     margin: 20px auto;
@@ -9,30 +9,63 @@
     background: #fff;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    gap: 20px;
 }
 
-.foto {
+/* Bagian Foto */
+.foto-wrapper {
     flex: 1;
-    max-width: 100%;
+    max-width: 500px;
+    text-align: center;
 }
 
-.foto img {
+.foto-wrapper img {
     width: 100%;
     object-fit: cover;
     border-radius: 10px;
 }
 
-.deskripsi-container {
-    text-align: left;
+/* Bagian Detail dan Komentar */
+.detail-container {
     flex: 1;
-    margin-right: 20px;
+    min-width: 300px;
 }
 
+.deskripsi {
+    padding: 10px;
+}
+
+.deskripsi h2 {
+    margin-bottom: 5px;
+}
+
+.tanggal {
+    font-size: 12px;
+    color: gray;
+}
+
+/* Tombol Download */
+.download-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 15px;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.download-btn:hover {
+    background: #0056b3;
+}
+
+/* Komentar */
 .komentar {
-    width: 40%;
     padding: 15px;
     background: #f9f9f9;
     border-radius: 10px;
+    margin-top: 20px;
 }
 
 .komentar form {
@@ -46,6 +79,7 @@
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    resize: vertical;
 }
 
 .komentar button {
@@ -62,6 +96,7 @@
     background: #0056b3;
 }
 
+/* Daftar Komentar */
 .komentar-list {
     margin-top: 20px;
 }
@@ -74,6 +109,19 @@
 .komentar-item:last-child {
     border-bottom: none;
 }
-.tanggal {
-    font-size: 10px;
-}
+
+/* Responsive */
+/* @media (max-width: 768px) {
+    .foto-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .foto-wrapper {
+        max-width: 100%;
+    }
+
+    .detail-container {
+        width: 100%;
+    }
+} */

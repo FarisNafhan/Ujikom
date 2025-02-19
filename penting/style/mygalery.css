@@ -17,16 +17,15 @@
     transition: transform 0.5s ease-in-out;
 }
 
-.gambar:hover {
-    transform: scale(1.05); /* Efek zoom saat hover */
-}
+/* .gambar:hover {
+    transform: scale(1.05);
+} */
 
 .gambar {
     width: 100%; /* Supaya gambar selalu pas */
     height: 200px;
     object-fit: cover;
     display: block;
-    background-color: gray;
 }
 
 .gambar-button {
@@ -44,11 +43,25 @@
 }
 
 .add-gambar {
-    text-align: center;
-    align-items: center;
-    font-size: 100px;
-    display: flex;
-    background-color: #ececec;
-    border-radius: 10px;
+    padding: 8px 10px;
+    margin-bottom: 10px;
+    background-color: #7AC2E1;
+    border: 1px solid #37A3D2;
+    border-radius: 7px;
     cursor: pointer;
+}
+
+.album-button {
+    width: auto;
+    padding: 12px 14px;
+    margin: 10px;
+    border-radius: 50px;
+    border: 1px solid #66B78C;
+    background-color: #66B78D;
+    color: white;
+}
+
+.album-button button a {
+    font-size: 10px;
+    width: auto;
 }
