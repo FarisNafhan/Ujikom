@@ -12,7 +12,7 @@
             <label for="deskripsi">Deskripsi</label>
             <input type="text" name="deskripsi" id="deskripsi" required>
         </div>
-        <div class="album-form">
+        <div class="album-form-success">
             <button type="submit">Tambah</button>
         </div>
     </form>

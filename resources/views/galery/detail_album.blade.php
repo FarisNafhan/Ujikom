@@ -13,8 +13,15 @@
             <label for="deskripsi">Deskripsi</label>
             <input type="text" name="deskripsi" id="deskripsi" value="{{ $album->deskripsi }}">
         </div>
-        <div class="album-form">
+        <div class="album-form-success">
             <button type="submit">Simpan</button>
+        </div>
+    </form>
+    <form action="{{ route('Delete.Album', $album->id) }}" method="post" onsubmit="return confirm('Yakin mau hapus foto ini?');">
+        @csrf
+        @method('DELETE')
+        <div class="album-form-danger">
+            <button type="submit">Delete</button>
         </div>
     </form>
 </div>

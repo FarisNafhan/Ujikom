@@ -1,14 +1,14 @@
 @extends('layouts.galery.basic')
 
 @section('content')
-    <!-- Bagian Session -->
+    <!-- Bagian Session kalo sukses -->
     @if (session('success'))
         <div id="pop_up" class="alert alert-success">
             {{ session('success') }}
         </div>
     @endif
 
-    <!-- Bagian list album -->
+    <!-- Bagian list album kalo ada-->
     <div class="album-list-container">
         <button class="album-button" data-album="all">Semua</button>
         @foreach ($albums as $album)
@@ -16,7 +16,7 @@
         @endforeach
     </div>
 
-    <!-- Bagian tampilan foto -->
+    <!-- Bagian tampilan foto semua user -->
     <div class="galery-container">
         @foreach ($fotos as $foto)
             <div class="gambar-container">

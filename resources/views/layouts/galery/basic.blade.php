@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{{ asset('storage/style/auth.css') }}">
     <link rel="stylesheet" href="{{ asset('storage/style/style.css') }}">
     <link rel="stylesheet" href="{{ asset('storage/style/user.css') }}">
+    <link rel="stylesheet" href="{{ asset('storage/style/table.css') }}">
     <link rel="stylesheet" href="{{ asset('storage/style/detailfoto.css') }}">
     <link rel="stylesheet" href="{{ asset('storage/style/notification.css') }}">
     <link rel="stylesheet" href="{{ asset('storage/style/mygalery.css') }}">

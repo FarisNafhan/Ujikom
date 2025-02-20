@@ -13,13 +13,13 @@
     opacity: 0;
 }
 /* alert success */
-.alert-success{
+.alert-success {
     background-color: #d4edda;
     color: #155724;
     border: 1px solid #c3e6cb;
 }
 /* alert danger */
-.alert-danger{
+.alert-danger {
     background-color: #edd4d4;
     color: #571515;
     border: 1px solid #e6c3c3;

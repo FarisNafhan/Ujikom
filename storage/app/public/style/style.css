@@ -16,6 +16,9 @@ body {
     font-family: Arial, sans-serif;
 }
 
+p{
+    margin: 10px auto;
+}
 .navbar {
     display: flex;
     justify-content: space-between;

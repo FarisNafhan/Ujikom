@@ -5,19 +5,18 @@
         <!-- Bagian Foto -->
         <div class="foto-wrapper">
             <img src="{{ asset('storage/' . $foto->lokasifile) }}" alt="Foto">
+            <div class="deskripsi">
+                <h2>{{ $foto->judul }}</h2>
+                <p class="tanggal">{{ $foto->created_at->format('d M Y') }} {{ $foto->album->nama }}</p>
+            </div>
         </div>
 
         <!-- Bagian Detail dan Komentar -->
         <div class="detail-container">
-            <div class="deskripsi">
-                <h2>{{ $foto->judul }}</h2>
-                <p class="tanggal">{{ $foto->created_at->format('d M Y') }} {{ $foto->album->nama }}</p>
-                <p><strong>Deskripsi:</strong><br>{{ $foto->deskripsi }}</p>
-
-                <a href="{{ route('DownloadFoto', $foto->id) }}" class="download-btn">
-                    <i class="fa-solid fa-download"></i> Unduh
-                </a>
-            </div>
+            <a href="{{ route('DownloadFoto', $foto->id) }}" class="download-btn">
+                <i class="fa-solid fa-download"></i> Unduh
+            </a>
+            <p><strong>Deskripsi:</strong><br>{{ $foto->deskripsi }}</p>
 
             <!-- Bagian Komentar -->
             <div class="komentar">
@@ -34,7 +33,8 @@
                     <h3>Komentar:</h3>
                     @foreach ($foto->komentar as $komentar)
                         <div class="komentar-item">
-                            <p><strong>{{ $komentar->user->username }}</strong> - {{ $komentar->created_at->format('d M Y') }}</p>
+                            <p><strong>{{ $komentar->user->username }}</strong> -
+                                {{ $komentar->created_at->format('d M Y') }}</p>
                             <p>{{ $komentar->isi }}</p>
                         </div>
                     @endforeach

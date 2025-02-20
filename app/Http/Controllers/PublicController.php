@@ -12,7 +12,8 @@ class PublicController extends Controller
 {
     public function landing()
     {
-        $fotos = foto::all();
+        $albums = album::all();
+        $fotos = foto::inRandomOrder()->with('likes', 'komentar')->get();
         return view('galery.landing', compact('fotos'));
     }
 

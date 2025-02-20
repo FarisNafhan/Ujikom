@@ -12,7 +12,9 @@
         </div> --}}
         <div>
             <a href="{{ route('NewGalery') }}">
-                <button class="add-gambar">Buat Galery+</button>
+                <button class="add-button">
+                    <strong>Buat Galery+</strong>
+                </button>
             </a>
         </div>
         <div class="galery-container">
@@ -34,7 +36,6 @@
                                         </a>
                                     </p>
                                 </button>
-
 
                                 <button id="like-btn-{{ $foto->id }}" onclick="like({{ $foto->id }})">
                                     <p id="like-count-{{ $foto->id }}">{{ $foto->like_count }}

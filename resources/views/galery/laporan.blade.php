@@ -12,12 +12,14 @@
         </div> --}}
         <div>
             <a href="{{ route('NewGalery') }}">
-                <button class="add-gambar">Buat Galery+</button>
+                <button class="add-button">
+                    <strong>Buat Galery+</strong>
+                </button>
             </a>
         </div>
 
         <div class="table-container">
-            <table>
+            <table class="tabels">
                 <thead>
                     <tr>
                         <th>No</th>
@@ -45,8 +47,9 @@
                             <td>{{ $foto->komentar->count() }}</td>
                             <td>{{ $foto->created_at }}</td>
                             <td>
-                                <a href="{{ route('DetailGalery', $foto->id)}}">Edit</a>
-                                <form action="{{ route('Destroy.Galery', $foto->id) }}" method="post"  onsubmit="return confirm('Yakin mau hapus foto ini?');">
+                                <a href="{{ route('DetailGalery', $foto->id) }}">Edit</a>
+                                <form action="{{ route('Destroy.Galery', $foto->id) }}" method="post"
+                                    onsubmit="return confirm('Yakin mau hapus foto ini?');">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit">Delete</button>

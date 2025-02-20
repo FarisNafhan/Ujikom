@@ -16,7 +16,7 @@
 .foto-wrapper {
     flex: 1;
     max-width: 500px;
-    text-align: center;
+    /* text-align: center; */
 }
 
 .foto-wrapper img {

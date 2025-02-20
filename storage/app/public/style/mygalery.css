@@ -1,7 +1,9 @@
 .galery-container {
     display: flex;
     gap: 15px; /* Jarak antar gambar */
-    padding: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    /* padding: 20px; */
     justify-content: start;
 }
 
@@ -10,17 +12,18 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin: 20px auto;
-    padding: 20px;
+    margin-bottom: 20px;
+    padding: 10px 12px;
     background: #fff;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .gambar-container {
-    width: 320px;
+    width: 316px;
     height: 240px;
     background-color: #ececec;
+    margin-bottom: 20px auto;
     /* margin-left: 1.5rem; */
     border-radius: 10px;
     overflow: hidden;
@@ -33,7 +36,7 @@
 } */
 
 .gambar-container img {
-    width: 100%; /* Supaya gambar selalu pas */
+    width: 100%;
     height: 200px;
     object-fit: cover;
     display: block;
@@ -41,7 +44,6 @@
 
 .gambar-button {
     position: absolute;
-    bottom: 10px;
     right: 10px;
 }
 
@@ -53,11 +55,11 @@
     font-size: 20px;
 }
 
-.add-gambar {
+.add-button {
     padding: 8px 10px;
     margin-bottom: 10px;
-    background-color: #7AC2E1;
-    border: 1px solid #37A3D2;
+    background-color: #92e17a;
+    border: 1px solid #37d259;
     border-radius: 7px;
     cursor: pointer;
 }
@@ -66,7 +68,6 @@
 
 .album-container {
     max-width: 400px;
-    display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -94,11 +95,21 @@
     border-radius: 5px;
 }
 
-.album-form button {
+.album-form-success button{
     padding: 10px 12px;
     width: 100%;
     margin-top: 10px;
-    background-color: rgb(55, 127, 235);
+    background-color: rgb(34, 216, 104);
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.album-form-danger button{
+    padding: 8px 12px;
+    width: 100%;
+    margin-top: 10px;
+    background-color: rgb(207, 26, 26);
     border: 1px solid black;
     border-radius: 5px;
     cursor: pointer;

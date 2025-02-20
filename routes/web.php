@@ -33,6 +33,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/album', [AlbumController::class, 'album'])->name('album');
     Route::get('/new-album', [AlbumController::class, 'new_album'])->name('NewAlbum');
     Route::get('/detail-album/{id}', [AlbumController::class, 'detail_album'])->name('DetailAlbum');
+    Route::delete('/delete-album/{id}', [AlbumController::class, 'delete_album'])->name('Delete.Album');
 
     Route::post('/add-album', [AlbumController::class, 'add_album'])->name('AddAlbum');
     Route::put('/save-album/{id}', [AlbumController::class, 'save_album'])->name('SaveAlbum');

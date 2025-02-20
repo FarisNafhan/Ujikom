@@ -42,7 +42,7 @@ class AlbumController extends Controller
             'user_id' => Auth::id(),
         ]);
 
-        return redirect()->route('album');
+        return redirect()->route('album')->with('success', 'album berhasil ditambahkan!');
     }
 
     public function detail_album($id)
@@ -69,5 +69,12 @@ class AlbumController extends Controller
         ]);
 
         return redirect()->route('album')->with('success', 'album berhasil diperbarui!!!');
+    }
+    public function delete_album($id)
+    {
+        $album = album::findOrFail($id);
+        $album->delete();
+
+        return redirect()->route('album')->with('success','Galery Berhasil di Hapus!!!');
     }
 }
