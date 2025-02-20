@@ -18,6 +18,9 @@
                 <li>
                     <a href=""><i class="fa-solid fa-bell"></i></a>
                 </li>
+                <li>
+                    <a href="{{ route('Laporan') }}"><i class="fa-solid fa-file"></i></a>
+                </li>
             @else
                 <li><a href="{{ route('login') }}">Login</a></li>
                 <li><a href="{{ route('register') }}">Register</a></li>

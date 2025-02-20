@@ -23,12 +23,12 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/home', [PublicController::class, 'home'])->name('home');
     Route::get('/download/{id}', [PublicController::class, 'download_foto'])->name('DownloadFoto');
     Route::get('/foto/{id}', [PublicController::class, 'detail_foto'])->name('DetailFoto');
+    Route::get('/notifikasi', [PublicController::class, 'notif'])->name('notif');
+    Route::get('/laporan', [PublicController::class, 'laporan'])->name('Laporan');
 
     Route::get('/profile', [ProfileController::class, 'profile'])->name('profile');
     Route::get('/edit-profile', [ProfileController::class, 'edit_profile'])->name('editprofile');
     Route::put('/save-profile', [ProfileController::class, 'save_profile'])->name('saveprofile');
-
-    Route::get('/notifikasi', [PublicController::class, 'notif'])->name('notif');
 
     Route::get('/album', [AlbumController::class, 'album'])->name('album');
     Route::get('/new-album', [AlbumController::class, 'new_album'])->name('NewAlbum');

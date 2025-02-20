@@ -53,4 +53,12 @@ class PublicController extends Controller
             return abort(404, 'File Not Found');
         }
     }
+
+    public function laporan()
+    {
+        $user_id = auth()->id();
+        $fotos = foto::where('user_id', $user_id)->with('likes', 'komentar')->get();
+
+        return view('galery.laporan', compact('fotos'));
+    }
 }

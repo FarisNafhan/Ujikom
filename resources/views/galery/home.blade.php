@@ -10,10 +10,10 @@
 
     <!-- Bagian list album -->
     <div class="album-list-container">
+        <button class="album-button" data-album="all">Semua</button>
         @foreach ($albums as $album)
             <button class="album-button" data-album="{{ $album->nama }}">{{ $album->nama }}</button>
         @endforeach
-        <button class="album-button" data-album="all">Semua</button>
     </div>
 
     <!-- Bagian tampilan foto -->
