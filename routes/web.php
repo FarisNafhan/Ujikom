@@ -21,6 +21,8 @@ Route::post('/register', [RegisterController::class, 'register'])->name('registe
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/home', [PublicController::class, 'home'])->name('home');
+    Route::get('/download/{id}', [PublicController::class, 'download_foto'])->name('DownloadFoto');
+    Route::get('/foto/{id}', [PublicController::class, 'detail_foto'])->name('DetailFoto');
 
     Route::get('/profile', [ProfileController::class, 'profile'])->name('profile');
     Route::get('/edit-profile', [ProfileController::class, 'edit_profile'])->name('editprofile');
@@ -37,9 +39,11 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/my-galery', [GaleryController::class, 'galery'])->name('Galery');
     Route::get('/my-galery-new', [GaleryController::class, 'new_galery'])->name('NewGalery');
+    Route::get('/detail-galery/{id}', [GaleryController::class, 'detail_galery'])->name('DetailGalery');
+
     Route::post('/my-galery-new-add', [GaleryController::class, 'add_galery'])->name('AddGalery');
-    Route::get('/download/{id}', [GaleryController::class, 'download_foto'])->name('DownloadFoto');
-    Route::get('/foto/{id}', [GaleryController::class, 'detail_foto'])->name('DetailFoto');
+    Route::put('/save-galery/{id}', [GaleryController::class, 'update_galery'])->name('Update.Galery');
+    Route::delete('/delete-galery/{id}', [GaleryController::class, 'delete_galery'])->name('Destroy.Galery');
 
     Route::post('/komentar-add/{foto_id}', [KomenController::class, 'komentar'])->name('komentar');
     Route::post('/foto/komentar', [KomenController::class, 'komentar'])->name('komentar.store');

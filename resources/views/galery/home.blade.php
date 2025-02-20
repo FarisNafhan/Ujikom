@@ -1,18 +1,37 @@
 @extends('layouts.galery.basic')
 
 @section('content')
+    <!-- Bagian Session -->
+    @if (session('success'))
+        <div id="pop_up" class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+
+    <!-- Bagian list album -->
+    <div class="album-list-container">
+        @foreach ($albums as $album)
+            <button class="album-button" data-album="{{ $album->nama }}">{{ $album->nama }}</button>
+        @endforeach
+        <button class="album-button" data-album="all">Semua</button>
+    </div>
+
+    <!-- Bagian tampilan foto -->
     <div class="galery-container">
         @foreach ($fotos as $foto)
             <div class="gambar-container">
-                <a href="{{ route('DetailFoto', $foto->id) }}">
-                    <img class="gambar" src="{{ asset('storage/' . $foto->lokasifile) }}">
-                </a>
+                <div class="gambar" data-album="{{ $foto->album->nama }}">
+                    <a href="{{ route('DetailFoto', $foto->id) }}">
+                        <img src="{{ asset('storage/' . $foto->lokasifile) }}">
+                    </a>
+                </div>
+
                 <div class="gambar-button-container">
                     <div class="gambar-button">
                         @auth
                             <button>
                                 <p id="komen-count-{{ $foto->id }}">{{ $foto->komen_count }}
-                                    <a href="{{ route('detail-foto', $foto->id) }}">
+                                    <a href="{{ route('DetailFoto', $foto->id) }}">
                                         <i class="fa-regular fa-comment" style="color: black"></i>
                                     </a>
                                 </p>

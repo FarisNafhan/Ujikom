@@ -1,21 +1,31 @@
 @extends('layouts.galery.basic')
 
 @section('content')
+    @if (session('success'))
+        <div id="pop_up" class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
     <div class="login-container">
-
+        <h2>Login</h2>
         <form action="{{ route('login') }}" method="post">
             @csrf
             <div class="login-form">
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email">
+                <p>
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email">
+                </p>
+
             </div>
             <div class="login-form">
-                <label for="password">Password</label>
-                <input type="password" name="password" id="password">
+                <p>
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password">
+                </p>
+
             </div>
             <div class="login-form">
-                <label for="register">don't have account?</label>
-                <a href="{{ route('registerForm') }}">register</a>
+                <p>don't have account?<a href="{{ route('registerForm') }}">register</a></p>
             </div>
             <div class="login-form">
                 <button type="submit">Login</button>

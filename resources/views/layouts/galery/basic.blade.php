@@ -24,4 +24,6 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="{{ asset('storage/script/count.js') }}"></script>
 <script src="{{ asset('storage/script/like.js') }}"></script>
+<script src="{{ asset('storage/script/list.js') }}"></script>
+<script src="{{ asset('storage/script/pop_up.js') }}"></script>
 </html>

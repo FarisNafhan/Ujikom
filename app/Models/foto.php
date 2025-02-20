@@ -23,4 +23,9 @@ class foto extends Model
     {
         return $this->hasMany(Like::class,'foto_id');
     }
+
+    public function album()
+    {
+        return $this->belongsTo(Album::class,'album_id');
+    }
 }

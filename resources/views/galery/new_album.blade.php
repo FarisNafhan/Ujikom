@@ -1,18 +1,18 @@
 @extends('layouts.galery.basic')
 
 @section('content')
-<div>
+<div  class="album-container">
     <form action="{{ route('AddAlbum') }}" method="post" >
         @csrf
-        <div>
+        <div class="album-form">
             <label for="nama">Nama</label>
-            <input type="text" name="nama" id="nama">
+            <input type="text" name="nama" id="nama" required>
         </div>
-        <div>
+        <div class="album-form">
             <label for="deskripsi">Deskripsi</label>
-            <input type="text" name="deskripsi" id="deskripsi">
+            <input type="text" name="deskripsi" id="deskripsi" required>
         </div>
-        <div>
+        <div class="album-form">
             <button type="submit">Tambah</button>
         </div>
     </form>

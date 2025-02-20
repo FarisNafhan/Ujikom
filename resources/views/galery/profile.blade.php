@@ -3,7 +3,7 @@
 @section('content')
     <div class="user-container">
         @if (session('success'))
-            <div class="alert alert-success">
+            <div id="pop_up" class="alert alert-success">
                 {{ session('success') }}
             </div>
         @endif
@@ -13,7 +13,7 @@
                 {{ session('danger') }}
             </div>
         @endif
-        
+
         <div>
             <p>{{ $user->username }}</p>
         </div>

@@ -19,6 +19,7 @@ class PublicController extends Controller
     public function home()
     {
         $user_id = auth()->id();
+        $albums = album::all();
         $fotos = foto::inRandomOrder()->with('likes', 'komentar')->get();
 
         foreach ($fotos as $foto) {
@@ -26,10 +27,30 @@ class PublicController extends Controller
             $foto->like_count = $foto->likes->count();
             $foto->komen_count = $foto->komentar->count();
         }
-        return view('galery.home', compact('fotos'));
+        return view('galery.home', compact('fotos', 'albums'));
     }
-    public function notif()
-    {
 
+    // public function notif()
+    // {
+
+    // }
+
+    public function detail_foto($id)
+    {
+        $foto = foto::with('komentar')->findOrFail($id);
+        return view('galery.detail_foto' ,compact('foto'));
+    }
+
+    public function download_foto($id)
+    {
+        $foto = Foto::findOrFail($id);
+
+        $file = storage_path('app/public/' . $foto->lokasifile);
+
+        if (file_exists($file)) {
+            return response()->download($file);
+        } else {
+            return abort(404, 'File Not Found');
+        }
     }
 }

@@ -11,7 +11,7 @@
         <div class="detail-container">
             <div class="deskripsi">
                 <h2>{{ $foto->judul }}</h2>
-                <p class="tanggal">{{ $foto->created_at->format('d M Y') }}</p>
+                <p class="tanggal">{{ $foto->created_at->format('d M Y') }} {{ $foto->album->nama }}</p>
                 <p><strong>Deskripsi:</strong><br>{{ $foto->deskripsi }}</p>
 
                 <a href="{{ route('DownloadFoto', $foto->id) }}" class="download-btn">

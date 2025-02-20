@@ -1,32 +1,27 @@
 @extends('layouts.galery.basic')
 
 @section('content')
-<div>
-    <form action="{{ route('register') }}" method="post">
+<div class="register-container">
+    <form action="{{ route('register') }}" method="post" class="register-form">
         @csrf
-        <div>
-            <label for="username">Username</label>
-            <input type="text" name="username" id="username">
+        <div class="register-form">
+            <input type="text" name="username" id="username" placeholder="username">
         </div>
-        <div>
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email">
-        </div>        <div>
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password">
-        </div>        <div>
-            <label for="telepon">Telepon</label>
-            <input type="text" name="telepon" id="telepon">
-        </div>        <div>
-            <label for="alamat">Alamat</label>
-            <input name="alamat" id="alamat"></input>
+        <div class="register-form">
+            <input type="email" name="email" id="email" placeholder="email">
         </div>
-        <div>
+        <div class="register-form">
+            <input type="password" name="password" id="password" placeholder="password">
+        </div>
+        <div class="register-form">
+            <input type="text" name="telepon" id="telepon" placeholder="telepon">
+        </div>
+        <div class="register-form">
+            <input name="alamat" id="alamat" placeholder="alamat">
+        </div>
+        <div class="register-form">
             <button type="submit">Register</button>
         </div>
     </form>
-    <div>
-        <a href="{{ route('loginForm') }}"><button>Back</button></a>
-    </div>
 </div>
 @endsection

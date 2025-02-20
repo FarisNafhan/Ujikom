@@ -27,7 +27,7 @@ class KomenController extends Controller
 
         $komen_count = komen::where('foto_id', $request->foto_id)->count();
 
-        return redirect()->route('detail-foto', ['id' => $request->foto_id]);
+        return redirect()->route('DetailFoto', ['id' => $request->foto_id]);
     }
 
 }
