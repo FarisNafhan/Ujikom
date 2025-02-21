@@ -10,11 +10,11 @@ function like(foto_id) {
         .then(data => {
             let icon = document.getElementById(`like-icon-${foto_id}`);
 
-            if (!icon) { // Cek apakah elemen ditemukan
+            if (!icon) {
                 console.error(`Icon like dengan ID like-icon-${photoId} tidak ditemukan.`);
                 return;
             }
-            
+
             if (data.massage === 'Liked') {
                 icon.classList.remove('fa-regular');
                 icon.classList.add('fa-solid');

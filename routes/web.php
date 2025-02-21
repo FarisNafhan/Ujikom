@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\AlbumController;
 use App\Http\Controllers\KomenController;
+use App\Http\Controllers\NotifController;
 use App\Http\Controllers\GaleryController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\ProfileController;
@@ -46,8 +47,10 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/save-galery/{id}', [GaleryController::class, 'update_galery'])->name('Update.Galery');
     Route::delete('/delete-galery/{id}', [GaleryController::class, 'delete_galery'])->name('Destroy.Galery');
 
+    Route::get('/foto-notif', [NotifController::class, 'notif'])->name('Notif');
+
     Route::post('/komentar-add/{foto_id}', [KomenController::class, 'komentar'])->name('komentar');
-    Route::post('/foto/komentar', [KomenController::class, 'komentar'])->name('komentar.store');
+    Route::post('/foto-komentar', [KomenController::class, 'komentar'])->name('komentar.store');
 
     Route::post('/like/{foto_id}', [LikeController::class, 'like'])->name('like');
 });

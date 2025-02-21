@@ -16,7 +16,7 @@
                     <a href="{{ route('profile') }}"><i class="fa-solid fa-user"></i></a>
                 </li>
                 <li>
-                    <a href=""><i class="fa-solid fa-bell"></i></a>
+                    <a href="{{ route('Notif') }}"><i class="fa-solid fa-bell"></i></a>
                 </li>
                 <li>
                     <a href="{{ route('Laporan') }}"><i class="fa-solid fa-file"></i></a>
