@@ -6,6 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Document</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdn.datatables.net/2.2.2/js/dataTables.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.2.2/css/dataTables.dataTables.css">
     <link rel="stylesheet" href="{{ asset('storage/fontawesome-free-6.7.2-web/css/all.min.css')}}">
     <link rel="stylesheet" href="{{ asset('storage/style/auth.css') }}">
     <link rel="stylesheet" href="{{ asset('storage/style/style.css') }}">

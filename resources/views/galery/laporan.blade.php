@@ -19,7 +19,7 @@
         </div>
 
         <div class="table-container">
-            <table class="tabels">
+            <table class="tabels" id="example">
                 <thead>
                     <tr>
                         <th>No</th>
@@ -61,4 +61,8 @@
             </table>
         </div>
     </div>
+
+    <script>
+        new DataTable('#example');
+    </script>
 @endsection

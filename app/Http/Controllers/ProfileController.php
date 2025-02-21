@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\foto;
 use App\Models\user;
+use App\Models\album;
+use App\Models\like;
 use Illuminate\Http\Request;
 
 class ProfileController extends Controller
@@ -10,7 +13,17 @@ class ProfileController extends Controller
     public function profile()
     {
         $user = auth()->user();
-        return view('galery.profile',compact('user'));
+
+        $totalFoto = foto::where("user_id", $user->id)->count();
+
+        $totalAlbum = album::where("user_id", $user->id)->count();
+
+        $likeTerbanyak = foto::withCount("likes")
+            ->where('user_id', $user)
+            ->orderBy('likes_count')
+            ->first();
+
+        return view('galery.profile', ['user' => $user, 't_foto' => $totalFoto, 't_album' => $totalAlbum, 'liketerbanyak' => $likeTerbanyak]);
     }
     public function edit_profile()
     {

@@ -15,7 +15,7 @@
                 </button>
             </a>
         </div>
-        <table>
+        <table id="example">
             <thead>
                 <tr>
                     <th>No.</th>
@@ -65,4 +65,8 @@
             @endforeach
         </div> --}}
     </div>
+
+    <script>
+        new DataTable('#example');
+    </script>
 @endsection
